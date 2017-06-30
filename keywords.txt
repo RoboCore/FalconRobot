@@ -1,0 +1,42 @@
+#######################################
+# Syntax Coloring Map For Falcon Robot
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+FalconRobot			KEYWORD1
+FalconRobotMotors			KEYWORD1
+FalconRobotLineSensor			KEYWORD1
+FalconRobotDistanceSensor			KEYWORD1
+FalconRobotButton		KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+drive			KEYWORD2
+pivot			KEYWORD2
+rightDrive		KEYWORD2
+leftDrive		KEYWORD2
+stop			KEYWORD2
+rightStop		KEYWORD2
+leftStop		KEYWORD2
+read			KEYWORD2
+check			KEYWORD2
+setBGLevel		KEYWORD2
+setDetectLevel	KEYWORD2
+calStatus		KEYWORD2
+distanceRead		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+FORWARD		LITERAL1
+BACKWARD			LITERAL1
+RIGHT		LITERAL1
+LEFT		LITERAL1
+CM		LITERAL1
+INCH		LITERAL1

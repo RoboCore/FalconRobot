@@ -114,8 +114,8 @@ class FalconRobotLineSensor {
 class FalconRobotDistanceSensor {
   public:
     FalconRobotDistanceSensor(int pinEcho, int pinTrig); // Simple constructor
-    int distanceRead(int und);
-    int distanceRead();
+    int read(int und);
+    int read();
 
   private:
     int _pinEcho;

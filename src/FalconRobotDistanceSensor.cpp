@@ -43,18 +43,18 @@ int FalconRobotDistanceSensor::timing() {
   return pulseIn(_pinEcho, HIGH); // duration
 }
 
-int FalconRobotDistanceSensor::distanceRead(int und) {
+int FalconRobotDistanceSensor::read(int und) {
   if (und)
     return timing() / CM_DIVISOR / 2;  //distance in CM
   else
     return timing() / INC_DIVISOR / 2; //distance in INC
 }
 
-int FalconRobotDistanceSensor::distanceRead() {
+int FalconRobotDistanceSensor::read() {
   /*
    * If the unit of measure is not passed as a parameter,
    * by default, it will return the distance in centimeters.
    * To change the default, replace CM by INC.
    */
-  return distanceRead(CM);
+  return read(CM);
 }

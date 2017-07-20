@@ -1,7 +1,9 @@
 /*******************************************************************************
-* Exp1_DriveForward - Falcon Robot Experiment 2
+* Exp8_SerialDrive - FalconRobot Experiment 8
 *
-* Drive forward and stop.
+* Now let's experiment with the distance sensor. This ultrasonic sensor let you
+* detect a collision before it really happens. You can read the exact distance
+* from the robot to the obstacle.
 *
 * Hardware setup:
 * The motors must be connected, and the board must be receiving power from the
@@ -15,19 +17,3 @@
 *
 * 20 Jul 2017 MarceloFariaz
 *******************************************************************************/
-
-#include <FalconRobot.h> // This line "includes" the Falcon Robot library
-//into your sketch. Provides special objects, methods, and functions.
-
-FalconRobotMotors motors(5, 7, 6, 8); // Instantiate the motor control object. This
-//only needs to be done once.
-
-void setup() {
-  motors.drive(100, FORWARD);   // Turn on Left and right motors at full speed forward.
-  delay(1000);         // Waits for 1 seconds
-  motors.stop();       // Stops both motors
-}
-
-void loop() {
-  // Nothing here. We'll get to this in the next experiment.
-}

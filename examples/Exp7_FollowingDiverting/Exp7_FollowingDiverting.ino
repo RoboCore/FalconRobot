@@ -1,20 +1,14 @@
 /*******************************************************************************
-* Exp5_2_LineFollowing -- Falcon Robot Experiment 5.2
+* Exp7_FollowingDiverting - FalconRobot Experiment 7
 *
-* This code reads the two line following sensors on A2 and A3
-* and prints them out to the Serial Monitor. Upload this example to your
-* Falcon Robot and open up the Serial Monitor by clicking the magnifying glass
-* in the upper-right hand corner.
-*
-* This is a real simple example of a line following algorithm. It has
-* a lot of room for improvement, but works fairly well for a curved track.
-* It does not handle right angles reliably -- maybe you can come up with a
-* better solution?
+* Now that we already know how to use the line sensors to follow the line and
+* the distance sensor to divert obstacles, what about doing the two together?
 *
 * Hardware setup:
 * The Line Sensors must be connected to pins A2 and A3 (left and right sensor,
-* respectively). The motors must be connected, and the board must be receiving
-* power from the battery pack.
+* respectively). The Distance Sensor must be connected to pins 2 and 3 (Echo and
+* Trig, respectively). The motors must be connected, and the board must be
+* receiving power from the battery pack.
 *
 * This sketch was written by RoboCore, with lots of help from the Arduino
 * community(especially from Sparkfun). This code is completely free for any use.
@@ -26,6 +20,7 @@
 *******************************************************************************/
 
 #include <FalconRobot.h>
+
 // initialize a sensor object on A2 and A3
 FalconRobotLineSensor left(A2);
 FalconRobotLineSensor right(A3);
@@ -33,25 +28,30 @@ FalconRobotLineSensor right(A3);
 int leftValue;  // variable to store the left sensor value
 int rightValue;  // variable to store the right sensor value
 
-// constants that are used in the code. LINETHRESHOLD is the level to detect
-// if the sensor is on the line or not. If the sensor value is greater than this
-// the sensor is above a DARK line.
-//
-// SPEED sets the nominal speed
-
 #define LINETHRESHOLD 700
 #define SPEED 50  // Set to any number from 0 - 100.
+// initialzes Distance Sensor object on pins 2 and 3
+
+// initialzes Distance Sensor object on pins 2 and 3
+FalconRobotDistanceSensor distanceSensor(2, 3);
+// DISTANCETHRESHOLD is the level to detect if the obstacle is very close or
+// not. If the sensor value is greater than this, the robot needs to deviate.
+#define DISTANCETHRESHOLD 15 // cm - Set to any number from 2 - 400.
+
+int distance;  // variable to store the distance value
 
 FalconRobotMotors motors(5, 7, 6, 8);
 int leftSpeed;   // variable used to store the leftMotor speed
 int rightSpeed;  // variable used to store the rightMotor speed
 
 
+const int buttonPin = A0; // variable to store the button Pin
+
 void setup() {
   Serial.begin(9600);
   Serial.println("Welcome to experiment 5.2 - Line Following");
   delay(2000);
-  Serial.println("Line Sensor Readings: ");
+  Serial.println("Sensors Readings: ");
   delay(500);
 }
 
@@ -65,7 +65,7 @@ void loop() {
   Serial.print(leftValue);
   Serial.print("\t");  // tab character
   Serial.print(rightValue);
-  Serial.println();   // new line
+  Serial.println();
 
   // if the both sensors are on the line, drive forward left and right at the same speed
   if((leftValue > LINETHRESHOLD) && (rightValue > LINETHRESHOLD)) {

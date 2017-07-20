@@ -27,11 +27,11 @@ Code developed in Arduino 1.6.5, on an RoboCore Falcon Robot rev1
 #define CM_DIVISOR  28
 #define INC_DIVISOR 71
 
-FalconRobotDistanceSensor::FalconRobotDistanceSensor(int pinTrig, int pinEcho) {
-  _pinTrig = pinTrig;
+FalconRobotDistanceSensor::FalconRobotDistanceSensor(int pinEcho, int pinTrig) {
   _pinEcho = pinEcho;
-  pinMode(_pinTrig, OUTPUT);
+  _pinTrig = pinTrig;
   pinMode(_pinEcho, INPUT);
+  pinMode(_pinTrig, OUTPUT);
 }
 
 int FalconRobotDistanceSensor::timing() {

@@ -48,12 +48,9 @@ void loop() {
   Serial.print(distance);
   Serial.println(); // new line
 
-  if (distance <= DISTANCETHRESHOLD) { // The obstacle is very close
-    delay(50); // for debouncing
-    if (distance <= DISTANCETHRESHOLD) { // The obstacle is really very close
-      reverse();    // backs up
-      turnRight();  // Can be replaced by  turnLeft();
-    }
+  if (distance <= DISTANCETHRESHOLD) { // The obstacle is really very close
+    reverse();    // backs up
+    turnRight();  // Can be replaced by  turnLeft();
   }
 
   delay(60);  // delay to wait sensor reading, suggested by datasheet
@@ -62,27 +59,27 @@ void loop() {
 // reverse() function -- backs up at full power
 void reverse() {
   motors.stop();
-  delay(250);  // short delay to let robot fully stop
+  delay(500);  // short delay to let robot fully stop
   motors.drive(50, BACKWARD);
   delay(500);
   motors.stop();
-  delay(250);  // short delay to let robot fully stop
+  delay(500);  // short delay to let robot fully stop
 }
 
 // turnRight() function -- turns FalconRobot to the Right
 void turnRight() {
   motors.leftDrive(50, FORWARD);  // spin CCW
   motors.rightDrive(50, BACKWARD); // spin CCW
-  delay(500);
+  delay(250);
   motors.stop();
-  delay(100);  // short delay to let robot fully stop
+  delay(250);  // short delay to let robot fully stop
 }
 
 // turnLeft() function -- turns FalconRobot to the Left
 void turnLeft() {
   motors.leftDrive(50, BACKWARD);  // spin CW
   motors.rightDrive(50, FORWARD); // spin CW
-  delay(500);
+  delay(250);
   motors.stop();
-  delay(100);  // short delay to let robot fully stop
+  delay(250);  // short delay to let robot fully stop
 }

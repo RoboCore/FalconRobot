@@ -39,7 +39,6 @@ void setup() {
 }
 
 void loop() {
-  motors.drive(50, FORWARD);
 
   // by default, returns the distance in cm. Try read(INCH) to get inches
   distance = distanceSensor.read();
@@ -51,6 +50,9 @@ void loop() {
   if (distance <= DISTANCETHRESHOLD) { // The obstacle is really very close
     reverse();    // backs up
     turnRight();  // Can be replaced by  turnLeft();
+  }
+  else { // otherwise, go forward
+      motors.drive(75, FORWARD);
   }
 
   delay(60);  // delay to wait sensor reading, suggested by datasheet

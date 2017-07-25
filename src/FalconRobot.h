@@ -65,21 +65,14 @@ class FalconRobotMotors {
     void drive(int speed, boolean direction); // Drive in direction given
     void drive(int speed, boolean direction, int duration); // drive(), but with a delay(duration)
 
-    void pivot(int speed, boolean direction); // Pivot more or less in place. Turns motors in
-    void pivot(int speed, boolean direction, int duration); // pivot() with a delay(duration)
-
     void rightDrive(int speed, boolean direction);  // Drive just the right motor
-    void rightDrive(int speed, boolean direction, int duration);  // Drive just the right motor; delay(duration);
-
     void leftDrive(int speed, boolean direction);  // Drive just the left motor
-    void leftDrive(int speed, boolean direction, int duration); // Drive just the left motor; delay(duration);
 
   private:
     int _pinMLPWM;
     int _pinMLDIR;
     int _pinMRPWM;
     int _pinMRDIR;
-
 };
 
 // This is a simple class to handle the button object on the robot. It has only one
@@ -116,6 +109,7 @@ class FalconRobotDistanceSensor {
     FalconRobotDistanceSensor(int pinEcho, int pinTrig); // Simple constructor
     int read(int und);
     int read();
+    int readAVG(int und = CM);
 
   private:
     int _pinEcho;

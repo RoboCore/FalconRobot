@@ -26,6 +26,7 @@ void setup() {
   motors.rightDrive(75, FORWARD); // Turn on right motor clockwise (motorPower = 75%)
   delay(1000);       // for 1000 ms.
   motors.stop();    // stop() motors
+  delay(250);        // for 250 ms.
 
   // pivot -- spinning both motors CW causes the FalconRobot to turn to the left
   motors.leftDrive(50, BACKWARD);  // Turn CW at motorPower of 50%
@@ -39,6 +40,7 @@ void setup() {
   motors.rightDrive(75, FORWARD); // Turn on right motor clockwise (motorPower = 75%)
   delay(1000);       // for 1000 ms.
   motors.stop();     // stop() motors
+  delay(250);        // for 250 ms.
 }
 
 void loop() {

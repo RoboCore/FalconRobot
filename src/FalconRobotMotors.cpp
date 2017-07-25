@@ -52,8 +52,6 @@ FalconRobotMotors::FalconRobotMotors() {
   pinMode(_pinMRDIR, OUTPUT);
 }
 
-
-
 // Basically the same as drive(), but omitting the right motor.
 void FalconRobotMotors::rightDrive(int speed, boolean direction) {
   speed = speed > 100 ? 100 : speed < 0 ? 0 : speed;
@@ -62,24 +60,12 @@ void FalconRobotMotors::rightDrive(int speed, boolean direction) {
   analogWrite(_pinMRPWM, speed);
 }
 
-void FalconRobotMotors::rightDrive(int speed, boolean direction, int duration) {
-  rightDrive(speed, direction);
-  delay(duration);
-  rightStop();
-}
-
 // Basically the same as drive, but omitting the left motor.
 void FalconRobotMotors::leftDrive(int speed, boolean direction) {
   speed = speed > 100 ? 100 : speed < 0 ? 0 : speed;
   speed = map(speed, 0, 100, 0, 255);
   digitalWrite(_pinMLDIR, direction);
   analogWrite(_pinMLPWM, speed);
-}
-
-void FalconRobotMotors::leftDrive(int speed, boolean direction, int duration) {
-  leftDrive(speed, direction);
-  delay(duration);
-  leftStop();
 }
 
 // Stop funcions for the each motor
@@ -108,19 +94,6 @@ void FalconRobotMotors::drive(int speed, boolean direction) {
 // commmand instruction.
 void FalconRobotMotors::drive(int speed, boolean direction, int duration) {
   drive(speed, direction);
-  delay(duration);
-  stop();
-}
-
-// pivot() is very much like drive(), except the motors are driven in opposite
-//  directions, so as to pivot the motor on it's central axis.
-void FalconRobotMotors::pivot(int speed, boolean direction) {
-  leftDrive(speed, direction);
-  rightDrive(speed, !direction);
-}
-
-void FalconRobotMotors::pivot(int speed, boolean direction, int duration) {
-  pivot(speed, direction);
   delay(duration);
   stop();
 }

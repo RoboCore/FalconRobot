@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp1_DriveForward - Falcon Robot Experiment 2
+* Exp2_1_DriveForward - Falcon Robot Experiment 2.1
 *
 * Drive forward and stop.
 *

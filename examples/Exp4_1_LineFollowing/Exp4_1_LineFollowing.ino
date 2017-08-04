@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp5_1_LineFollowing -- FalconRobot Experiment 5.1
+* Exp4_1_LineFollowing -- FalconRobot Experiment 4.1
 *
 * This code reads the two line following sensors on A2 and A3
 * and prints them out to the Serial Monitor. Upload this example to your

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp4_PushToStart - Falcon Robot Experiment 4
+* Exp3_PushToStart - Falcon Robot Experiment 3
 *
 * Push the button (A0) to start running!
 *

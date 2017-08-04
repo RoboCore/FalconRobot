@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp6_1_DeviatingObstacles - FalconRobot Experiment 6.1
+* Exp5_2_DeviatingObstacles - FalconRobot Experiment 5.2
 *
 * Now let's experiment with the distance sensor. This ultrasonic sensor let you
 * detect a collision before it really happens. You can read the exact distance
@@ -52,7 +52,7 @@ void loop() {
     turnRight();  // Can be replaced by  turnLeft();
   }
   else { // otherwise, go forward
-      motors.drive(75, FORWARD);
+      motors.drive(50, FORWARD);
   }
 
   delay(60);  // delay to wait sensor reading, suggested by datasheet

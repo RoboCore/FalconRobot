@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp7_1_SerialDrive - FalconRobot Experiment 7_1
+* Exp6_SerialDrive - FalconRobot Experiment 6
 *
 * The first step to controlling the Falcon Robot remotely is to first drive it
 * from the Serial Monitor in a tethered setup.

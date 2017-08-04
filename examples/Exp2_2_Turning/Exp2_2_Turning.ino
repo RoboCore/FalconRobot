@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp3_Turning - FalconRobot Experiment 3
+* Exp2_2_Turning - FalconRobot Experiment 2.2
 *
 * Explore turning with the FalconRobot by controlling the Right and Left motors
 * separately.

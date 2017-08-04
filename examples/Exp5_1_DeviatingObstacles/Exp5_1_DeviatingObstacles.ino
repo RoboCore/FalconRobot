@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp6_1_DeviatingObstacles - FalconRobot Experiment 6.1
+* Exp5_1_DeviatingObstacles - FalconRobot Experiment 5.1
 *
 * Now let's experiment with the distance sensor. This code reads the distance
 * sensor and prints them out to the Serial Monitor. Upload this example to your

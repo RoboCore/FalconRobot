@@ -1,5 +1,5 @@
 /*******************************************************************************
-* Exp1_BasicTest - Falcon Robot Experiment 1
+* Exp1_HelloWorld - Falcon Robot Experiment 1
 *
 * Time to make sure the electronics work! To test everything out, we're
 * going to blink the LED on the board.

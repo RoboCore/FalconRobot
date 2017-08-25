@@ -42,13 +42,15 @@ Code developed in Arduino 1.6.5, on an RoboCore Falcon Robot rev1
 #define PIN_LS_1  A2
 #define PIN_LS_2  A3
 
+// Motors functions directions constants
 #define BACKWARD  0
 #define FORWARD 1
 #define RIGHT 0
 #define LEFT 1
 
-#define CM 1
-#define INCH 0
+// Distance Sensor divisors values
+#define CM 28
+#define INCH 71
 
 // This class handles motor functionality. I expect one instance of this at the
 // start of a piece of FalconRobot code.
@@ -106,15 +108,16 @@ class FalconRobotLineSensor {
 // This handles the ultrasonic distance sensor.
 class FalconRobotDistanceSensor {
   public:
-    FalconRobotDistanceSensor(int pinEcho, int pinTrig); // Simple constructor
-    int read(int und);
-    int read();
-    int readAVG(int und = CM);
+    FalconRobotDistanceSensor(int pinEcho, int pinTrig, unsigned long timeout = 20000UL); // Simple constructor
+    unsigned int read();
+    unsigned int read(int unit);
+    void setTimeout(unsigned long timeout) {_timeout = timeout;}
 
   private:
     int _pinEcho;
     int _pinTrig;
-    int timing();
+    unsigned long _timeout;
+    unsigned long timing();
 };
 
 #endif

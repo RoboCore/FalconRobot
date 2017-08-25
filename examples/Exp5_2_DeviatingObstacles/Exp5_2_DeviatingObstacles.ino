@@ -47,7 +47,7 @@ void loop() {
   Serial.print(distance);
   Serial.println(); // new line
 
-  if (distance <= DISTANCETHRESHOLD) { // The obstacle is really very close
+  if (distance >= DISTANCETHRESHOLD) { // The obstacle is really very close
     reverse();    // backs up
     turnRight();  // Can be replaced by  turnLeft();
   }
